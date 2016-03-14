@@ -2,9 +2,15 @@ Slices = new Mongo.Collection('Slices');
 PullRequests = new Mongo.Collection('PullRequests');
 
 if (Meteor.isClient) {
-    function getRandomArbitrary(min, max) { return Math.random() * (max - min) + min; }
+    function getRandomArbitrary(min, max) {
+        return Math.random() * (max - min) + min;
+    }
 
-    Template.hello.helpers({ pullRequestList() { return PullRequests.find(); } });
+    Template.hello.helpers({
+        pullRequestList() {
+            return PullRequests.find();
+        }
+    });
 
     Template.pullRequest.onRendered(function() {
         new Audio('fight.wav').play();
@@ -43,8 +49,20 @@ if (Meteor.isClient) {
 
 if (Meteor.isServer) {
     let locked = false;
-    Meteor.startup(function() { if (!PullRequests.findOne()) { PullRequests.insert({name: 'PULL ME'}); } });
-    HTTP.methods({ slice(data) { if (this.method === 'POST') { Slices.insert({slice: true}); } } });
+    Meteor.startup(function() {
+        const state = (Math.random() * 1000).toString();
+
+        if (!PullRequests.findOne()) {
+            PullRequests.insert({name: 'PULL ME'});
+        }
+    });
+    HTTP.methods({
+        slice(data) {
+            if (this.method === 'POST') {
+                Slices.insert({slice: true});
+            }
+        }
+    });
     Meteor.methods({
         clearSlices() {
             Slices.remove({});

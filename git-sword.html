@@ -5,6 +5,7 @@
 </head>
 
 <body>
+    {{>loginButtons}}
     <audio controls autoplay loop>
         <source src="loop.wav" type="audio/wav">
         Your browser does not support the audio element.
@@ -15,6 +16,10 @@
 <template name="hello">
     {{#each pullRequestList}}
         {{>pullRequest}}
+    {{/each}}
+
+    {{#each responseList}}
+        {{>response}}
     {{/each}}
 </template>
 

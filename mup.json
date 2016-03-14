@@ -1,0 +1,20 @@
+{
+  "servers": [
+    {
+      "host": "didericis.com",
+      "username": "ubuntu",
+      "pem": "~/.ssh/didi-mbp-didericiscom.pem"
+    }
+  ],
+  "setupMongo": true,
+  "setupNode": true,
+  "nodeVersion": "0.10.36",
+  "setupPhantom": true,
+  "enableUploadProgressBar": true,
+  "appName": "git-sword",
+  "app": "~/Documents/Programming/Projects/git-sword",
+  "env": {
+    "ROOT_URL": "http://www.didericis.com"
+  },
+  "deployCheckWaitTime": 15
+}
