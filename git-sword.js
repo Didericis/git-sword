@@ -6,6 +6,15 @@ if (Meteor.isClient) {
         return Math.random() * (max - min) + min;
     }
 
+    Template.header.events({
+        'click #get-stuff': function() {
+            Meteor.call('getRepos', function(err, result) {
+                if (err) console.log(err.stack);
+                if (result) console.log(result);
+            });
+        }
+    });
+
     Template.hello.helpers({
         pullRequestList() {
             return PullRequests.find();
@@ -74,6 +83,9 @@ if (Meteor.isServer) {
                     PullRequests.insert({name: 'EVIL BUG'});
                 }), 1000);
             }
+        },
+        getRepos() {
+            return HTTP.call('GET', 'http://www.github.com/user/didericis/repos');
         }
     });
 }

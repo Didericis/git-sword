@@ -8,13 +8,16 @@
   ],
   "setupMongo": true,
   "setupNode": true,
-  "nodeVersion": "0.10.36",
+  "nodeVersion": "0.10.40",
   "setupPhantom": true,
   "enableUploadProgressBar": true,
   "appName": "git-sword",
   "app": "~/Documents/Programming/Projects/git-sword",
   "env": {
-    "ROOT_URL": "http://www.didericis.com"
+    "ROOT_URL": "https://www.didericis.com"
   },
-  "deployCheckWaitTime": 15
+  "deployCheckWaitTime": 15,
+  "ssl": {
+      "pem": "./bundle.pem"
+  }
 }

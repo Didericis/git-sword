@@ -1,17 +1,22 @@
 <head>
   <title>git-sword</title>
   <link href='https://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
 </head>
 
 <body>
+    {{> header}}
+    {{> hello}}
+</body>
+
+<template name="header">
     {{>loginButtons}}
     <audio controls autoplay loop>
         <source src="loop.wav" type="audio/wav">
         Your browser does not support the audio element.
     </audio>
-    {{> hello}}
-</body>
+    <button id="get-stuff">GET</button>
+</template>
 
 <template name="hello">
     {{#each pullRequestList}}
