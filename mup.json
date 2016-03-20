@@ -1,7 +1,7 @@
 {
   "servers": [
     {
-      "host": "didericis.com",
+      "host": "git-sword.didericis.com",
       "username": "ubuntu",
       "pem": "~/.ssh/didi-mbp-didericiscom.pem"
     }
@@ -14,10 +14,10 @@
   "appName": "git-sword",
   "app": "~/Documents/Programming/Projects/git-sword",
   "env": {
-    "ROOT_URL": "https://www.didericis.com"
+    "ROOT_URL": "https://git-sword.didericis.com"
   },
   "deployCheckWaitTime": 15,
   "ssl": {
-      "pem": "./bundle.pem"
+    "pem": "./git-sword-bundle.pem"
   }
 }

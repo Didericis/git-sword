@@ -25,3 +25,4 @@ http
 accounts-github
 accounts-ui
 tarang:ssl
+force-ssl
