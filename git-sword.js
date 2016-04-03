@@ -92,7 +92,6 @@ if (Meteor.isServer) {
         Meteor.publish('PullRequests', () => { return PullRequests.find(); });
     });
     HTTP.methods({ slice(data) {
-        console.log('SLICE!');
         Slices.insert({slice: true});
     } });
     Meteor.methods({
